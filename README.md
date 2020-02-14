@@ -28,7 +28,7 @@ $dispatcher->dispatch(new App\Events\UserSignedUp($user));
 ### Events
 All events must be an instance of `Anddye\EventDispatcher\Events\EventInterface` and ideally should extend `Anddye\EventDispatcher\Events\AbstractEvent` - which will implement the required interface by default.
 
-When an event is dispatched, it's identified by a unique name. By default, the name of an event will be that off the class, however you can manually set an event name by overwriting the `getName()` method.
+When an event is dispatched, it's identified by a unique name. By default, the name of an event will be that of the class, however you can manually set an event name by overwriting the `getName()` method.
 
 ```php
 namespace App\Events;
@@ -37,9 +37,6 @@ use Anddye\EventDispatcher\Events\AbstractEvent;
 
 class UserSignedUp extends AbstractEvent
 {
-    /**
-     * @return string
-     */
     public function getName(): string
     {
         return 'UserRegistered';
