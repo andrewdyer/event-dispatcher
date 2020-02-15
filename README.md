@@ -1,4 +1,13 @@
 # Event Dispatcher
+
+[![Latest Stable Version](https://poser.pugx.org/andrewdyer/event-dispatcher/v/stable)](https://packagist.org/packages/andrewdyer/event-dispatcher)
+[![Total Downloads](https://poser.pugx.org/andrewdyer/event-dispatcher/downloads)](https://packagist.org/packages/andrewdyer/event-dispatcher)
+[![Daily Downloads](https://poser.pugx.org/andrewdyer/event-dispatcher/d/daily)](https://packagist.org/packages/andrewdyer/event-dispatcher)
+[![Monthly Downloads](https://poser.pugx.org/andrewdyer/event-dispatcher/d/monthly)](https://packagist.org/packages/andrewdyer/event-dispatcher)
+[![Latest Unstable Version](https://poser.pugx.org/andrewdyer/event-dispatcher/v/unstable)](https://packagist.org/packages/andrewdyer/event-dispatcher)
+[![License](https://poser.pugx.org/andrewdyer/event-dispatcher/license)](https://packagist.org/packages/andrewdyer/event-dispatcher)
+[![composer.lock](https://poser.pugx.org/andrewdyer/event-dispatcher/composerlock)](https://packagist.org/packages/andrewdyer/event-dispatcher)
+
 A simple event dispatcher that you can fit into the framework of your choice.
 
 ## License
