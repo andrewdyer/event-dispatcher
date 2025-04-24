@@ -27,7 +27,7 @@ namespace App\Events;
 
 use AndrewDyer\EventDispatcher\Events\AbstractEvent;
 
-class UserRegisteredEvent extends AbstractEvent
+class UserRegistered extends AbstractEvent
 {
     public function getName(): string
     {
@@ -84,9 +84,9 @@ $dispatcher->addListener('UserRegistered', new SendRegistrationEmail());
 Trigger the event and notify all registered listeners:
 
 ```php
-use App\Events\UserRegisteredEvent;
+use App\Events\UserRegistered;
 
-$dispatcher->dispatch(new UserRegisteredEvent());
+$dispatcher->dispatch(new UserRegistered());
 ```
 
 ## 🤝 Contributing
