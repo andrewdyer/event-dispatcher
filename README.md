@@ -1,3 +1,5 @@
+![Event Dispatcher](https://raw.githubusercontent.com/andrewdyer/andrewdyer/refs/heads/main/assets/images/covers/event-dispatcher.png)
+
 # Event Dispatcher
 
 A simple event dispatcher that you can fit into the framework of your choice.
