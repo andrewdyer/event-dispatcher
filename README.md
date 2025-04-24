@@ -2,8 +2,6 @@
 
 A simple event dispatcher that you can fit into the framework of your choice.
 
----
-
 ## ⚖️ License
 
 Licensed under the [MIT license](https://opensource.org/licenses/MIT) and is free for private or commercial projects.
