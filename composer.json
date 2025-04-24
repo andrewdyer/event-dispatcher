@@ -2,6 +2,7 @@
   "name": "andrewdyer/event-dispatcher",
   "description": "A simple event dispatcher that you can fit into the framework of your choice",
   "type": "library",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "AndrewDyer\\EventDispatcher\\": "src/"
