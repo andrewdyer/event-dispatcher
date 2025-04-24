@@ -6,6 +6,10 @@ A simple event dispatcher that you can fit into the framework of your choice.
 
 Licensed under the [MIT license](https://opensource.org/licenses/MIT) and is free for private or commercial projects.
 
+## ✨ Introduction
+
+Event Dispatcher is a lightweight, framework-agnostic library for implementing the observer pattern in PHP. It enables you to define events and attach listeners that react when those events are triggered - keeping your code clean, modular, and easy to extend.
+
 ## 📋 Prerequisites
 
 Before you begin, ensure you have met the following requirements:
