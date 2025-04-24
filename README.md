@@ -1,37 +1,96 @@
-![PHP Package Template](https://raw.githubusercontent.com/andrewdyer/andrewdyer/refs/heads/main/assets/images/covers/php-package-template.png)
+# Event Dispatcher
 
-# PHP Package Template
+A simple event dispatcher that you can fit into the framework of your choice.
 
-A template for creating PHP 8.3+ packages.
+---
 
-## License
+## ⚖️ License
 
 Licensed under the [MIT license](https://opensource.org/licenses/MIT) and is free for private or commercial projects.
 
-## Introduction
+## 📦 Installation
 
-This template provides a solid foundation for building modern PHP packages. It’s designed to help you hit the ground running and focus on building your package functionality without worrying about boilerplate setup like autoloading, testing, or Composer configuration.
+Install the package via Composer:
 
-## Prerequisites
+```bash
+composer require andrewdyer/event-dispatcher
+```
 
-Before you begin, ensure you have met the following requirements:
+## 🚀 Getting Started
 
-- **PHP**: Version 8.3 or higher.
-- **[Composer](https://getcomposer.org)**: A dependency manager for PHP, used to install packages and autoload your code.
+### 1. Define Your Events
 
-## Features
+Create a class that implements `AndrewDyer\EventDispatcher\Events\EventInterface` (or extend `AbstractEvent`).
 
-This template includes the following tools and configurations:
+By default, the event name is the class name, but you can override it:
 
-- [PSR-4 autoloading](https://www.php-fig.org/psr/psr-4/) via Composer
-- [PHPUnit](https://phpunit.de/) for unit testing to ensure the reliability of your code.
-- [PHP Coding Standards Fixer](https://cs.symfony.com/) for maintaining consistent code style.
-- CI (Continuous Integration) setup with [GitHub Actions](https://github.com/features/actions) for automated testing.
+```php
+namespace App\Events;
 
-## Getting Started
+use AndrewDyer\EventDispatcher\Events\AbstractEvent;
 
-If you like what you've seen so far and think this setup fits your needs, you can quickly get started by clicking the **Use this template** button at the top of the repository on GitHub.
+class UserRegisteredEvent extends AbstractEvent
+{
+    public function getName(): string
+    {
+        return 'UserRegistered';
+    }
+}
+```
 
-## Contributing
+### 2. Create Your Listeners
 
-Before contributing to this project, please refer to the [contributing](./CONTRIBUTING.md) documentation.
+Listeners must implement `AndrewDyer\EventDispatcher\Listeners\ListenerInterface` (or extend `AbstractListener`).
+
+```php
+namespace App\Listeners;
+
+use AndrewDyer\EventDispatcher\Events\EventInterface;
+use AndrewDyer\EventDispatcher\Listeners\AbstractListener;
+
+class SendRegistrationEmail extends AbstractListener
+{
+    public function handle(EventInterface $event): void
+    {
+        // Send welcome email to user...
+    }
+}
+```
+
+## 📖 Usage
+
+### Initialize the Dispatcher
+
+Create a new instance of the event dispatcher:
+
+```php
+use AndrewDyer\EventDispatcher\EventDispatcher;
+
+$dispatcher = new EventDispatcher();
+```
+
+### Register a Listener
+
+Attach a listener class to respond to a specific event:
+
+```php
+use App\Listeners\SendRegistrationEmail;
+
+$dispatcher->addListener('UserRegistered', new SendRegistrationEmail());
+```
+
+> 💡 **Tip**: You can register multiple listeners for the same event name, and they will be executed in the order they were added.
+
+### Dispatch an Event
+
+Trigger the event and notify all registered listeners:
+
+```php
+use App\Events\UserRegisteredEvent;
+
+$dispatcher->dispatch(new UserRegisteredEvent());
+```
+
+## 🤝 Contributing
+
+Found a bug or want to improve this package? Feel free to open a pull request or submit an issue.
