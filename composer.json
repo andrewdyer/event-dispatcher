@@ -1,15 +1,15 @@
 {
-  "name": "your-vendor/your-package",
+  "name": "andrewdyer/event-dispatcher",
   "description": "",
   "type": "library",
   "autoload": {
     "psr-4": {
-      "YourVendor\\YourPackage\\": "src/"
+      "AndrewDyer\\EventDispatcher\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "YourVendor\\YourPackage\\Tests\\": "tests/"
+      "AndrewDyer\\EventDispatcher\\Tests\\": "tests/"
     }
   },
   "require": {
