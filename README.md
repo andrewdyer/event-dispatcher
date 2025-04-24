@@ -6,6 +6,13 @@ A simple event dispatcher that you can fit into the framework of your choice.
 
 Licensed under the [MIT license](https://opensource.org/licenses/MIT) and is free for private or commercial projects.
 
+## 📋 Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- **PHP**: Version 8.3 or higher.
+- **[Composer](https://getcomposer.org)**: A dependency manager for PHP, used to install packages and autoload your code.
+
 ## 📦 Installation
 
 Install the package via Composer:
