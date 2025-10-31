@@ -1,4 +1,4 @@
-![Event Dispatcher](https://raw.githubusercontent.com/andrewdyer/public-assets/refs/heads/main/images/covers/event-dispatcher.png)
+![Event Dispatcher](http://public-assets.andrewdyer.rocks/images/covers/event-dispatcher.png)
 
 # Event Dispatcher
 
