@@ -6,8 +6,14 @@ use AndrewDyer\EventDispatcher\Tests\Fixtures\Events\DummyEvent;
 use AndrewDyer\EventDispatcher\Tests\Fixtures\Listeners\DummyListener;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Unit tests for AbstractListener.
+ */
 class ListenerTest extends TestCase
 {
+    /**
+     * Asserts that the handle method accepts a valid event instance.
+     */
     public function testHandleMethodAcceptsAnEvent()
     {
         $listener = new DummyListener();
@@ -17,6 +23,9 @@ class ListenerTest extends TestCase
         $this->addToAssertionCount(1);
     }
 
+    /**
+     * Asserts that the handle method throws a TypeError when a non-event argument is passed.
+     */
     public function testHandleMethodThrowsErrorIfInvalidEventGiven()
     {
         $this->expectException(\TypeError::class);

@@ -5,8 +5,16 @@ namespace AndrewDyer\EventDispatcher\Tests\Fixtures\Listeners;
 use AndrewDyer\EventDispatcher\Events\EventInterface;
 use AndrewDyer\EventDispatcher\Listeners\AbstractListener;
 
+/**
+ * Handles another dummy test event.
+ */
 class AnotherDummyListener extends AbstractListener
 {
+    /**
+     * Handles the given event.
+     *
+     * @param EventInterface $event The event to handle.
+     */
     #[\Override]
     public function handle(EventInterface $event): void
     {
