@@ -73,7 +73,7 @@ class EventDispatcher
      * Determines whether any listeners are registered for the given event name.
      *
      * @param string $eventName The name of the event.
-     * @return bool True if at least one listener is registered, false otherwise.
+     * @return bool True if a listener registry entry exists for the event, false otherwise.
      */
     public function hasListeners(string $eventName): bool
     {
