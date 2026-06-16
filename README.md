@@ -1,39 +1,32 @@
-![Event Dispatcher](http://public-assets.andrewdyer.rocks/images/covers/event-dispatcher.png)
-
 # Event Dispatcher
 
-A simple event dispatcher that you can fit into the framework of your choice.
+A framework-agnostic library for implementing the observer pattern through named events and registered listeners.
 
-## ⚖️ License
+[![Latest Stable Version](http://poser.pugx.org/andrewdyer/event-dispatcher/v?style=flat-square)](https://packagist.org/packages/andrewdyer/event-dispatcher)
+[![Total Downloads](http://poser.pugx.org/andrewdyer/event-dispatcher/downloads?style=flat-square)](https://packagist.org/packages/andrewdyer/event-dispatcher)
+[![License](http://poser.pugx.org/andrewdyer/event-dispatcher/license?style=flat-square)](https://packagist.org/packages/andrewdyer/event-dispatcher)
+[![PHP Version Require](http://poser.pugx.org/andrewdyer/event-dispatcher/require/php?style=flat-square)](https://packagist.org/packages/andrewdyer/event-dispatcher)
 
-Licensed under the [MIT license](https://opensource.org/licenses/MIT) and is free for private or commercial projects.
+## Introduction
 
-## ✨ Introduction
+This library lets events be defined as classes and listeners attached to them by name, with the dispatcher notifying every registered listener in the order they were added when an event is triggered. Listeners are kept fully decoupled from the code that raises the event, making it straightforward to extend application behaviour without modifying the originating logic, regardless of the framework in use.
 
-Event Dispatcher is a lightweight, framework-agnostic library for implementing the observer pattern in PHP. It enables you to define events and attach listeners that react when those events are triggered - keeping your code clean, modular, and easy to extend.
+## Prerequisites
 
-## 📋 Prerequisites
+- **[PHP](https://www.php.net/)**: Version 8.3 or higher is required.
+- **[Composer](https://getcomposer.org/)**: Dependency management tool for PHP.
 
-Before you begin, ensure you have met the following requirements:
-
-- **PHP**: Version 8.3 or higher.
-- **[Composer](https://getcomposer.org)**: A dependency manager for PHP, used to install packages and autoload your code.
-
-## 📦 Installation
-
-Install the package via Composer:
+## Installation
 
 ```bash
 composer require andrewdyer/event-dispatcher
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
-### 1. Define Your Events
+### 1. Define an event
 
-Create a class that implements `AndrewDyer\EventDispatcher\Events\EventInterface` (or extend `AbstractEvent`).
-
-By default, the event name is the class name, but you can override it:
+Create a class that implements `EventInterface`, or extend `AbstractEvent`. By default, the event name is the short (unqualified) class name, but this can be overridden:
 
 ```php
 namespace App\Events;
@@ -49,9 +42,9 @@ class UserRegistered extends AbstractEvent
 }
 ```
 
-### 2. Create Your Listeners
+### 2. Create a listener
 
-Listeners must implement `AndrewDyer\EventDispatcher\Listeners\ListenerInterface` (or extend `AbstractListener`).
+Create a class that implements `ListenerInterface`, or extend `AbstractListener`:
 
 ```php
 namespace App\Listeners;
@@ -68,11 +61,9 @@ class SendRegistrationEmail extends AbstractListener
 }
 ```
 
-## 📖 Usage
+### 3. Set up the dispatcher
 
-### Initialize the Dispatcher
-
-Create a new instance of the event dispatcher:
+Instantiate `EventDispatcher`:
 
 ```php
 use AndrewDyer\EventDispatcher\EventDispatcher;
@@ -80,9 +71,11 @@ use AndrewDyer\EventDispatcher\EventDispatcher;
 $dispatcher = new EventDispatcher();
 ```
 
-### Register a Listener
+## Usage
 
-Attach a listener class to respond to a specific event:
+### Registering a listener
+
+Attach a listener to a specific event name via `addListener()`:
 
 ```php
 use App\Listeners\SendRegistrationEmail;
@@ -90,11 +83,11 @@ use App\Listeners\SendRegistrationEmail;
 $dispatcher->addListener('UserRegistered', new SendRegistrationEmail());
 ```
 
-> 💡 **Tip**: You can register multiple listeners for the same event name, and they will be executed in the order they were added.
+Multiple listeners can be registered against the same event name; they are executed in the order they were added.
 
-### Dispatch an Event
+### Dispatching an event
 
-Trigger the event and notify all registered listeners:
+Trigger an event and notify all of its registered listeners via `dispatch()`:
 
 ```php
 use App\Events\UserRegistered;
@@ -102,6 +95,6 @@ use App\Events\UserRegistered;
 $dispatcher->dispatch(new UserRegistered());
 ```
 
-## 🤝 Contributing
+## License
 
-Found a bug or want to improve this package? Feel free to open a pull request or submit an issue.
+Licensed under the [MIT licence](https://opensource.org/licenses/MIT) and is free for private or commercial projects.
