@@ -1,6 +1,14 @@
 {
   "name": "andrewdyer/event-dispatcher",
   "description": "A framework-agnostic library for implementing the observer pattern through named events and registered listeners",
+  "keywords": [
+    "php",
+    "framework-agnostic",
+    "event-dispatcher",
+    "events",
+    "listeners",
+    "observer-pattern"
+  ],
   "type": "library",
   "license": "MIT",
   "autoload": {
