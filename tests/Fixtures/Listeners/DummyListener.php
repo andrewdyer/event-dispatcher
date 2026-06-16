@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AndrewDyer\EventDispatcher\Tests\Fixtures\Listeners;
 
 use AndrewDyer\EventDispatcher\Events\EventInterface;

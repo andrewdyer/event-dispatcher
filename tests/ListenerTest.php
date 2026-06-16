@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AndrewDyer\EventDispatcher\Tests;
 
 use AndrewDyer\EventDispatcher\Tests\Fixtures\Events\DummyEvent;

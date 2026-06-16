@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace AndrewDyer\EventDispatcher;
 
 use AndrewDyer\EventDispatcher\Events\EventInterface;
