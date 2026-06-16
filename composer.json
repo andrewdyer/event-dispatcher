@@ -1,6 +1,6 @@
 {
   "name": "andrewdyer/event-dispatcher",
-  "description": "A simple event dispatcher that you can fit into the framework of your choice",
+  "description": "A framework-agnostic library for implementing the observer pattern through named events and registered listeners",
   "type": "library",
   "license": "MIT",
   "autoload": {
