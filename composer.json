@@ -11,6 +11,18 @@
   ],
   "type": "library",
   "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrew Dyer",
+      "homepage": "https://andrewdyer.rocks",
+      "role": "Developer"
+    }
+  ],
+  "homepage": "https://github.com/andrewdyer/event-dispatcher",
+  "support": {
+    "issues": "https://github.com/andrewdyer/event-dispatcher/issues",
+    "source": "https://github.com/andrewdyer/event-dispatcher"
+  },
   "autoload": {
     "psr-4": {
       "AndrewDyer\\EventDispatcher\\": "src/"
